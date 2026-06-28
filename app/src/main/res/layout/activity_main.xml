@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:fillViewport="true"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aegis Voice"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YOUR OFFLINE DIGITAL STENOGRAPHER"
+            android:textColor="#BB86FC"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_dark"
+            android:padding="16dp"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SYSTEM STATUS"
+                android:textColor="#888888"
+                android:textSize="10sp"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="2dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+                <View
+                    android:id="@+id/status_dot_enable"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="#FF4444"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Keyboard Enabled"
+                    android:textColor="#EEEEEE"
+                    android:textSize="14sp"
+                    android:layout_marginStart="12dp"/>
+                <Button
+                    android:id="@+id/btn_step_enable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="ENABLE"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#6200EE"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="6dp">
+                <View
+                    android:id="@+id/status_dot_select"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="#FF4444"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Aegis Selected"
+                    android:textColor="#EEEEEE"
+                    android:textSize="14sp"
+                    android:layout_marginStart="12dp"/>
+                <Button
+                    android:id="@+id/btn_step_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="SELECT"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#6200EE"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="6dp">
+                <View
+                    android:id="@+id/status_dot_mic"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="#FF4444"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mic Permission"
+                    android:textColor="#EEEEEE"
+                    android:textSize="14sp"
+                    android:layout_marginStart="12dp"/>
+                <Button
+                    android:id="@+id/btn_step_mic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="ALLOW"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#6200EE"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="6dp">
+                <View
+                    android:id="@+id/status_dot_language"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:background="#FF4444"/>
+                <TextView
+                    android:id="@+id/tv_label_language"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Language Protocol"
+                    android:textColor="#EEEEEE"
+                    android:textSize="14sp"
+                    android:layout_marginStart="12dp"/>
+                <Button
+                    android:id="@+id/btn_step_language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:text="VERIFY"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#6200EE"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"/>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="14dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🛡️ Trust Check: Turn on Airplane Mode. I work perfectly.\n💡 Tip: Tap 'Aegis AI' on keyboard to toggle Dark Mode."
+                android:textColor="#888888"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🧠 AI Optimization"
+                android:textColor="#BB86FC"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginBottom="2dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Since I am offline, I can't guess your private context.\n👉 Please add Names &amp; Jargon to 'Hotwords' for perfect accuracy."
+                android:textColor="#CCCCCC"
+                android:textSize="10sp"
+                android:gravity="center"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginBottom="4dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="▲"
+                    android:textColor="#BB86FC"
+                    android:textSize="10sp"
+                    android:layout_marginEnd="4dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100% Offline AI. Zero Cloud."
+                    android:textColor="#666666"
+                    android:textSize="10sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_dark"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🔓"
+                    android:textSize="14sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AEGIS STUDIO™"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Please add local audio files for offline transcription."
+                android:textColor="#AAAAAA"
+                android:textSize="11sp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btn_open_studio"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="ADD AUDIO FILE"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#6200EE"
+                android:elevation="0dp"/>
+
+        </LinearLayout>
+
+        <View android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Official Build | aegisvoice.com"
+            android:textColor="#444444"
+            android:textSize="12sp"
+            android:letterSpacing="0.05"
+            android:autoLink="web"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"/>
+
+    </LinearLayout>
+</ScrollView>

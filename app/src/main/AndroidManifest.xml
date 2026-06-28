@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Aegis Voice - Privacy-First AI Keyboard
+
+  This application is designed with a fundamental privacy guarantee:
+  NO NETWORK PERMISSIONS are declared in this manifest.
+
+  What this means for users:
+  - The app operates 100% on-device (edge AI).
+  - Your voice data, typing data, and personal dictionary NEVER leave your device.
+  - There is zero capability for the app to transmit any data to external servers
+    or services. No internet permission, no Wi-Fi state access, no data network
+    access of any kind is requested.
+  - All AI inference and voice processing happens entirely within the local
+    application sandbox.
+
+  Open Source Commitment:
+  This manifest is part of the Aegis Voice open source project. We believe
+  transparency is the only way to earn trust. By keeping every permission
+  auditable and intentionally minimal, we ensure that privacy promises are
+  backed by code anyone can inspect.
+
+  Permissions Overview (audit trail):
+  - RECORD_AUDIO: Required for voice-to-text input feature. Audio is processed
+    locally and discarded immediately after transcription.
+  - VIBRATE: Required for haptic feedback on key presses (standard keyboard
+    functionality).
+  - FOREGROUND_SERVICE_* permissions: Explicitly REMOVED from final manifest
+    via tools:node="remove" to ensure no foreground service entitlements are
+    included in the shipped APK. This is a belt-and-suspenders approach to
+    keep the permission footprint minimal.
+
+  For more details, see the project's privacy policy and source repository.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permission: Required for voice input feature.
+         Audio is processed on-device and is never stored or transmitted. -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!-- Permission: Required for haptic keyboard feedback. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Explicit permission removals: These foreground service permissions are
+         intentionally stripped from the final manifest. This ensures the app
+         cannot use foreground services of these types, further limiting any
+         potential for background data access patterns. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" tools:node="remove" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" tools:node="remove" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" tools:node="remove" />
+
+    <queries>
+        <intent>
+            <action android:name="android.view.InputMethod" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AegisVoice"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".UserDictionaryActivity"
+            android:label="Manage Hotwords"
+            android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:exported="false" />
+
+        <activity
+            android:name=".StudioActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <service
+            android:name=".AegisInputService"
+            android:label="Aegis AI Keyboard"
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+    </application>
+
+</manifest>

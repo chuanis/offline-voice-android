@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+    android:padding="16dp">
+
+    <TextView
+        android:text="📝 Add Custom Hotwords"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="For absolute privacy, we do not display saved history here. Data is write-only.\n\nSimply paste NEW words below to append to your library.\n(One word per line. Max 500 lines total supported.)"
+        android:textSize="11sp"
+        android:textColor="#555555"
+        android:lineSpacingExtra="2dp"
+        android:layout_marginBottom="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etUserWords"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#F5F5F5"
+        android:gravity="top|start"
+        android:hint="Paste new words here..."
+        android:padding="12dp"
+        android:textSize="15sp"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:scrollbars="vertical"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:backgroundTint="#CCCCCC"
+            android:textColor="#000000"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Append &amp; Apply"
+            android:backgroundTint="#6200EE"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+</LinearLayout>

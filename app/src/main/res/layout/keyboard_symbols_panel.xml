@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutSymbols"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#F2F3F5"
+    android:paddingTop="8dp"
+    android:paddingBottom="25dp"
+    android:visibility="gone">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="42dp" android:orientation="horizontal" android:paddingHorizontal="2dp" android:layout_marginBottom="8dp">
+        <Button android:id="@+id/keyAt" android:text="\@" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyHash" android:text="#" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyDollar" android:text="$" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyPercent" android:text="%" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyAmp" android:text="&amp;" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyUnderscore" android:text="_" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyLeftParen" android:text="(" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyRightParen" android:text=")" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keySlash" android:text="/" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyBackSlash" android:text="\\" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="42dp" android:orientation="horizontal" android:paddingHorizontal="2dp" android:layout_marginBottom="8dp">
+        <Button android:id="@+id/keyLeftBracket" android:text="[" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyRightBracket" android:text="]" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyLeftBrace" android:text="{" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyRightBrace" android:text="}" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyLess" android:text="&lt;" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyMore" android:text="&gt;" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyStar" android:text="*" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyCaret" android:text="^" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keyPipe" android:text="|" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/keySemiColon" android:text=";" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="42dp" android:orientation="horizontal" android:paddingHorizontal="2dp" android:layout_marginBottom="8dp">
+        <Button android:id="@+id/btnChComma" android:text="，" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/btnChPeriod" android:text="。" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/btnChQuestion" android:text="？" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/btnChExclamation" android:text="！" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/btnChDun" android:text="、" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/btnChLeftQuote" android:text="“" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/btnChRightQuote" android:text="”" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/btnChColon" android:text="：" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/btnChEllipsis" android:text="…" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+        <Button android:id="@+id/btnChWave" android:text="～" style="@style/NumKeyStyle" android:textSize="20sp" android:textStyle="normal"/>
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="42dp" android:orientation="horizontal" android:paddingHorizontal="2dp" android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:id="@+id/btnBackToVoiceSym"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:background="@drawable/bg_key_white"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView android:src="@drawable/ic_mic" android:layout_width="24dp" android:layout_height="24dp" android:tint="#000000" android:clickable="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnSwitchToNumpad"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:background="@drawable/bg_key_white"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView android:text="123" android:textSize="16sp" android:textStyle="bold" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:clickable="false"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSpaceSymbols"
+            android:text="␣"
+            style="@style/NumKeyStyle"
+            android:layout_weight="2.0"
+            android:textSize="16sp"
+            android:textStyle="normal"/>
+
+        <LinearLayout
+            android:id="@+id/btnBackToQwerty"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:background="@drawable/bg_key_white"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView android:text="ABC" android:textSize="16sp" android:textStyle="bold" android:textColor="#000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:clickable="false"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnDeleteSymbols"
+            android:layout_width="0dp"
+            android:layout_weight="1.0"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:background="@drawable/bg_key_white"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+            <ImageView android:src="@drawable/ic_backspace" android:layout_width="24dp" android:layout_height="24dp" android:tint="#000000" android:clickable="false"/>
+        </LinearLayout>
+    </LinearLayout>
+    <View android:layout_width="match_parent" android:layout_height="10dp"/>
+</LinearLayout>

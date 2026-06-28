@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:keepScreenOn="true">
+
+    <include layout="@layout/keyboard_voice_panel" />
+
+    <include layout="@layout/keyboard_qwerty_panel" />
+
+    <include layout="@layout/keyboard_symbols_panel" />
+
+    <include layout="@layout/keyboard_numpad_panel" />
+
+    <include layout="@layout/keyboard_super_symbol_panel" />
+
+</FrameLayout>
