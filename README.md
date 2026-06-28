@@ -4,7 +4,7 @@
 ![100% Offline](https://img.shields.io/badge/Status-100%25%20Offline-success)
 ![Privacy First](https://img.shields.io/badge/Privacy-Absolute-blue)
 
-The world's most hardcore, entirely on-device offline AI voice transcription engine, engineered for absolute privacy and ultra-long professional meetings. Built upon the architectural foundation of Patent CN 122201305 A.
+The world's most hardcore, entirely on-device offline AI voice transcription engine. Engineered for absolute privacy and ultra-long professional meetings, this project is built upon the architectural foundation of Patent CN 122201305 A.
 
 ---
 
@@ -12,33 +12,36 @@ The world's most hardcore, entirely on-device offline AI voice transcription eng
 
 The commercial release of this architecture is currently live on Google Play as **[Aegis Offline AI Keyboard](https://play.google.com/store/apps/details?id=com.aegis.voice&pli=1)**, priced at **$299 USD**. 
 
+![Aegis Keyboard Interface](docs/aegis01.png)
+
 **Why $299?** 
 Mainstream transcription apps trap you in endless monthly subscriptions and secretly upload your highly sensitive boardroom audio to their cloud servers. Aegis changes the paradigm:
-* **One-time purchase, lifetime access.**
-* **Real-time Dictation:** Continuously transcribe for up to **200 minutes** without dropping a syllable.
-* **Offline Studio (Batch Processing):** Import heavy MP3/MP4 files and transcribe up to **500 minutes** in one go. 
-* **Zero-Network Policy:** 100% of the compute happens on your physical silicon. As long as your phone has battery, Aegis is on duty 24/7.
+* **One-Time Purchase, Lifetime Access:** No recurring fees.
+* **1-Million-Word Local Lexicon:** We have integrated a colossal, locally-stored dictionary containing over 1 million English words. The engine allows you to dynamically switch between four highly specialized domains: **General, Tech, Legal, and Business**. This massive foundational vocabulary is the secret weapon behind our high-precision output.
+* **Real-Time Dictation:** Continuously transcribe for up to **200 minutes** without dropping a syllable.
+* **Offline Studio (Batch Processing):** Import heavy MP3/MP4 files and transcribe up to **500 minutes** in a single session. 
+* **Zero-Network Policy:** 100% of the compute happens on your physical silicon. As long as your device has battery, Aegis is on duty 24/7.
 
-> **Open Source Mission:** 
-> We are open-sourcing the Titan V13 Core under the MIT License. If you are a developer, you are free to clone, compile, and use this architecture at no cost. If setting up the build environment is too much of a hassle, we welcome you to support our work by downloading the official, ready-to-use app from Google Play.
+> **Our Open Source Mission:** 
+> We are open-sourcing the Titan V13 Core under the MIT License. If you are a developer, you are free to clone, compile, and integrate this architecture at no cost. If setting up the build environment is too much of a hassle, we welcome you to support our work by downloading the official, ready-to-use app from Google Play.
 
 ---
 
 ## 🎯 Capabilities & Language Boundaries
 
-* **English ONLY:** To maintain the highest possible accuracy and build the ultimate contextual magnetic field for the underlying LLM, this engine is strictly dedicated to the English language. (No Chinese or multi-language support is included in this build).
-* **Conservative Marketing, Aggressive Delivery:** We officially advertise an accuracy rate of 82%. However, thanks to our proprietary C++ `FuzzyMatch` engine and local VIP Hotword injection, the real-world accuracy consistently hits **92%**.
+* **English ONLY:** To maintain the highest possible accuracy and build the ultimate contextual magnetic field for the underlying LLM, this engine is strictly dedicated to the English language (No Chinese or multi-language support is included in this build).
+* **Conservative Marketing, Aggressive Delivery:** We officially advertise an accuracy rate of 82%. However, driven by our proprietary C++ `FuzzyMatch` engine, the 1-million-word domain lexicons, and local VIP Hotword injection, the real-world accuracy consistently hits **92%**.
 
 ---
 
-## 🎛️ Hardware Requirements & The "Compute Dashboard"
+## 🎛️ Hardware Requirements & The Compute Dashboard
 
 Aegis handles hardware disparity elegantly through its built-in **Compute Dashboard**. 
 
 * **Flagship Devices (Snapdragon 8 Gen 3, Gen 4, Gen 5):** 
   True real-time performance. If you record a 1-hour meeting and hit stop, the final text is fully processed and rendered on your screen within 1 to 2 seconds. The NPU easily outpaces human speech.
-* **Legacy/Mid-range Devices (Snapdragon 8 Gen 2 and below):** 
-  **It will NOT crash.** However, the NPU/CPU compute cannot keep up with real-time speech. The Dashboard will indicate a backlog (e.g., "100 slices pending"). If you record for 1 hour, it may take an additional hour for the background queue to clear after you stop the mic. 
+* **Legacy & Mid-Range Devices (Snapdragon 8 Gen 2 and below):** 
+  **It will NEVER crash.** However, the NPU/CPU compute cannot keep up with real-time speech. The Dashboard will indicate a backlog (e.g., "100 slices pending"). If you record for 1 hour, it may take an additional hour for the background queue to clear after you stop the mic. 
 * **The Verdict:** The engine is immortal. It will eventually finish the job without OOM (Out of Memory) crashes, but your hardware dictates your speed.
 
 ---
@@ -51,18 +54,28 @@ Aegis enforces strict physical isolation between the Java/Kotlin UI layer, the C
 
 ---
 
+## 🔒 The 180MB Encrypted Assets (Models & Lexicons)
+
+The ~180MB asset package required to run this engine—which houses our core AI models and the aforementioned 1-million-word dictionary—is **strictly encrypted**. 
+
+To the open-source community: The cryptography logic is completely visible within our open-sourced C++ layer. If you wish to understand, unpack, or modify these files, you can reverse-engineer the decryption mechanism directly from the source code. We will not provide further documentation on the encryption scheme here. 
+
+If you do not intend to tamper with the assets, simply drop the package into the project as instructed. The application's internal engine will automatically execute on-the-fly decryption in memory during runtime.
+
+---
+
 ## ⚙️ Qualcomm QNN NPU Setup (Unlocking Maximum Power)
 
 This project natively supports Qualcomm's Hexagon DSP/NPU hardware acceleration. However, due to Qualcomm's proprietary licensing, **we cannot distribute the official `.so` binaries in this repository.**
 
-To unleash the NPU:
+To unleash the full power of the NPU:
 1. Download the official Qualcomm Neural Network (QNN) SDK from the Qualcomm Developer Network.
 2. Extract and place the required binaries (e.g., `libQnnHtp.so`, `libQnnSystem.so`) exactly as shown in the blueprints below:
 
 ![QNN Binaries Location 01](docs/qnn_binaries_location01.png)
 ![QNN Binaries Location 02](docs/qnn_binaries_location02.png)
 
-*Note: Our `CMakeLists.txt` is equipped with an auto-detection shield. If you do not provide these QNN binaries, the engine will safely and automatically downgrade to CPU/GPU execution without throwing build errors.*
+> **Note:** Our `CMakeLists.txt` is equipped with an auto-detection shield. If you do not provide these QNN binaries, the engine will safely and automatically downgrade to CPU/GPU execution without throwing build errors.
 
 ---
 
